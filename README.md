@@ -1,8 +1,5 @@
 
 # Expense Tracker
-
-https://github.com/Mansiv75/expense-tracker/
-
 A simple command-line application for tracking expenses. This application allows users to add, list, delete, and summarize their expenses. Additionally, users can export their expenses to a CSV file for further analysis.
 
 ~ Features
@@ -100,4 +97,7 @@ This will create a file named `expenses.csv` in the current directory.
 ~ Contributing
 
 Feel free to fork the repository and make improvements. Please open an issue or submit a pull request with any changes or enhancements.
+
+Source
+https://roadmap.sh/projects/expense-tracker
 
