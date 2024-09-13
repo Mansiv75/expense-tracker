@@ -58,5 +58,11 @@
         "date": "2024-09-11",
         "description": "Shopping",
         "amount": 100.0
+    },
+    {
+        "id": 11,
+        "date": "2024-09-12",
+        "description": "groceries",
+        "amount": 55.0
     }
 ]
