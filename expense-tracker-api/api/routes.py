@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from flask_jwt_extended import jwt_required, get_jwt_identity # type: ignore
+from flask_jwt_extended import jwt_required, get_jwt_identity, create_access_token # type: ignore
 from api.models import db, User, Expense
 from werkzeug.security import generate_password_hash, check_password_hash
 import datetime
