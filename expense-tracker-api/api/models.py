@@ -1,5 +1,4 @@
-from flask_sqlalachemy import SQLAlchemy # type: ignore
-
+from flask_sqlalchemy import SQLAlchemy   # type: ignore
 db = SQLAlchemy()
 
 class User(db.Model):
