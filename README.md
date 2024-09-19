@@ -1,103 +1,151 @@
+Expense Tracker
 
-# Expense Tracker
-A simple command-line application for tracking expenses. This application allows users to add, list, delete, and summarize their expenses. Additionally, users can export their expenses to a CSV file for further analysis.
+This repository contains two implementations of an Expense Tracker:
+1. CLI (Command-Line Interface) Application for managing expenses via terminal commands.
+2. API (Application Programming Interface) for managing expenses programmatically, including user authentication with JWT.
 
-~ Features
+## Table of Contents
+-Introduction
+-CLI Application
+  -Features
+  -Usage
+-API Application
+  -Features
+  -Endpoints
+  -Usage
+-Installation
+-Testing-Screenshots/Video Demosts
+-Contributing
+-License
+---
 
-- Add a new expense with a description and amount.
-- List all recorded expenses.
-- Delete an expense by its ID.
-- View a summary of all expenses or expenses for a specific month.
-- Export all expenses to a CSV file.
+## Introduction
+The Expense Tracker allows users to:
+- Add, list, delete, and summarize expenses.
+- Authenticate using JWT (for API).
+- Manage expenses via CLI or HTTP requests.
 
-~ Requirements
+## CLI Application
 
-- Python 3.x
+### CLI Features
+- Add Expense: Add a new expense with a date, description, and amount.
+- List Expenses: Display all expenses.
+- Delete Expense: Remove an expense by its ID.
+- Summarize Expenses: Get a total expense for a specific month or overall.
+- Export Expenses: Export data to CSV format.
 
-~ Installation
+### CLI Usage
+To use the CLI app:
+1. Run the `expense-manager.py` to start managing expenses:
+    ```
+    python expense-manager.py --help
+    ```
+2. Example commands:
+    - Add an expense:
+      ```
+      python expense-manager.py add --description "Groceries" --amount 50
+      ```
+    - List all expenses:
+      ```
+      python expense-manager.py list
+      ```
+    - Delete an expense:
+      ```
+      python expense-manager.py delete --id 1
+      ```
+
+## API Application
+
+### API Features
+- User Signup & Login: Authenticate via JWT tokens.
+- Add Expense: Create a new expense linked to a user.
+- List Expenses: Retrieve all expenses of an authenticated user.
+- Delete Expense: Remove an expense by ID.
+- Summary: Show the total expenses for a specific month or overall.
+
+### API Endpoints
+| Endpoint           | Method  | Description                                |
+|--------------------|---------|--------------------------------------------|
+| `/api/users`       | POST    | Register a new user                        |
+| `/api/login`       | POST    | Log in and receive a JWT token             |
+| `/api/expenses`    | POST    | Add a new expense (JWT required)           |
+| `/api/expenses`    | GET     | List all expenses (JWT required)           |
+| `/api/expenses/<id>` | DELETE | Delete an expense by ID (JWT required)     |
+| `/api/summary`     | GET     | Show total expenses for a specific month   |
+
+### API Usage
+1. Signup: 
+    ```
+    POST /api/users
+    {
+      "username": "john_doe",
+      "password": "secret_password"
+    }
+    ```
+
+2. Login:
+    ```
+    POST /api/login
+    {
+      "username": "john_doe",
+      "password": "secret_password"
+    }
+    ```
+
+3. Add Expense:
+    ```
+    POST /api/expenses
+    {
+      "description": "Lunch",
+      "amount": 15.00
+    }
+    ```
+
+4. List Expenses:
+    ```
+    GET /api/expenses
+    ```
+
+5. Delete Expense:
+    ```
+    DELETE /api/expenses/1
+    ```
+
+6. Summary:
+    ```
+    GET /api/summary?month=9
+    ```
+
+## Installation
 
 1. Clone the repository:
+   ```
+   git clone https://github.com/YourUsername/expense-tracker.git
+   ```
 
-    ```
-    git clone https://github.com/yourusername/expense-tracker.git
-    ```
+2. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
 
-2. Navigate to the project directory:
+3. Set up the database:
+   - For API:
+     ```
+     python -m flask create-db
+     ```
 
-    ```
-    cd expense-tracker
-    ```
+## Testing
+You can manually test the API using tools like Postman or cURL.
 
-3. No additional libraries are required beyond Python’s standard library.
+### CLI Testing
+Run the following commands to test the CLI application:
+- Add expenses, list them, delete, or get summaries through `expense-manager.py`.
 
-~ Usage
+### API Testing
+Use Postman to:
+- Signup new users.
+- Log in to retrieve the JWT token.
+- Perform the expense management operations.
 
-* Add a New Expense
-
-To add a new expense, use the following command:
-
-```
-python one.py add --description "Description of the expense" --amount Amount
-```
-```
-python one.py add --description "Lunch" --amount 15.50
-```
-
-* List All Expenses
-
-To list all recorded expenses, use:
-
-```
-python one.py list
-```
-
-* Delete an Expense
-
-To delete an expense, use the following command with the expense ID:
-
-```
-python one.py delete --id ExpenseID
-```
-```
-python one.py delete --id 1
-```
-
-* View Summary
-
-To view the summary of all expenses, use:
-
-```
-python one.py summary
-```
-
-To view the summary of expenses for a specific month, use:
-
-```
-python one.py summary --month MonthNumber
-```
-```
-python one.py summary --month 8
-```
-
-* Export Expenses to CSV
-
-To export all expenses to a CSV file, use:
-
-```
-python one.py export
-```
-
-This will create a file named `expenses.csv` in the current directory.
-
-~ File Storage
-
-- Expenses are stored in a file named `expenses.txt` in JSON format.
-- The export functionality creates a `expenses.csv` file with the recorded expenses.
-
-~ Contributing
-
-Feel free to fork the repository and make improvements. Please open an issue or submit a pull request with any changes or enhancements.
-
-Source
-https://roadmap.sh/projects/expense-tracker
+---
 
