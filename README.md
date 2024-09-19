@@ -1,4 +1,4 @@
-Expense Tracker
+#Expense Tracker
 
 This repository contains two implementations of an Expense Tracker:
 1. CLI (Command-Line Interface) Application for managing expenses via terminal commands.
