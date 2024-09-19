@@ -1,9 +1,10 @@
 
-Expense Tracker
+# Expense Tracker
 This repository contains two implementations of an Expense Tracker:
 
 CLI (Command-Line Interface) Application for managing expenses via terminal commands.
 API (Application Programming Interface) for managing expenses programmatically, including user authentication with JWT.
+
 ## Table of Contents
 -Introduction
 -CLI Application
