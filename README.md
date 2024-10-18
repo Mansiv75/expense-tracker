@@ -6,18 +6,19 @@ CLI (Command-Line Interface) Application for managing expenses via terminal comm
 API (Application Programming Interface) for managing expenses programmatically, including user authentication with JWT.
 
 ## Table of Contents
--Introduction
--CLI Application
-  -Features
-  -Usage
--API Application
-  -Features
-  -Endpoints
-  -Usage
--Installation
--Testing-Screenshots/Video Demosts
--Contributing
--License
+
+- Introduction
+- CLI Application
+  - Features
+  - Usage
+- API Application
+  - Features
+  - Endpoints
+  - Usage
+- Installation
+- Testing-Screenshots/Video Demosts
+- Contributing
+- License
 ---
 
 ## Introduction
