@@ -150,4 +150,3 @@ Use Postman to:
 - Perform the expense management operations.
 
 ---
-https://roadmap.sh/projects/expense-tracker-api
